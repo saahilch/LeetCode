@@ -2,15 +2,19 @@ class Solution {
     public int lengthOfLongestSubstring(String s) {
         
        int ans = 0;
+// geting arrya as characters the total characyers are 128 so we took 128 bit array length
     int[] count = new int[128];
-
+//  traverse it all the length via for loop also check its leghts is equal to 128 or not
     for (int l = 0, r = 0; r < s.length(); ++r) {
-      ++count[s.charAt(r)];
+// now auto increment it by 1     
+++count[s.charAt(r)];
+//again traverse it upto for loop get exit i.e 128
       while (count[s.charAt(r)] > 1)
         --count[s.charAt(l++)];
+now return m=maximum two caracters & store it into another var
       ans = Math.max(ans, r - l + 1);
     }
-
+// finnalu return ans
     return ans;
     }
    
