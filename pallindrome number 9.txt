@@ -1,0 +1,20 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+       //check x is <than 0 if yes then true or false goto next step
+       //declare var inititlise it as 0 then declae another var as x assign same valye it that var 
+       //noe traverse it if y is greter than then multiply reversed by 10 &  add y then %10
+       // finnnalu return reversed but stored it as x 
+        if(x<0)
+        return false;
+        long reversed=0;
+        int y=x;
+        while(y>0)
+        {
+            reversed=reversed *10 +y % 10;
+            y/=10;
+        }
+        return reversed==x;
+        
+    }
+}
+ 
