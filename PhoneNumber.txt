@@ -1,0 +1,31 @@
+class Solution {
+    public List<String> letterCombinations(String digits) {
+        // checks list is empty or not  if yes then return new 
+        if(digits.isEmpty())
+        return new ArrayList<>();
+        List<String> ans=new ArrayList<>();
+        //we usi g deft first serch apporach we use string builder
+        dfs(digits,0,new StringBuilder(),ans);
+        return ans ;
+        
+    }
+    //declaring new array as ststic and final & assign all the letters on num pad
+    private static final String [] digitsToLetter={"","","abc","def","ghi","jkl", "mno", "pqrs", "tuv", "wxyz"};
+private void dfs(String digits,int i,StringBuilder sb ,List<String>ans)
+{
+    //declare dfs string integer & string builder sb and list as ans & check total digits length if true then add into it
+    if(i == digits.length())
+    {
+        ans.add(sb.toString());
+        return;
+    }
+    // traverse all digits append 
+    for(final char c : digitsToLetter[digits.charAt(i)-'0'].toCharArray())
+    {
+        sb.append(c);
+        dfs(digits,i+1,sb,ans);
+        sb.deleteCharAt(sb.length()-1);
+    }
+}
+}
+
