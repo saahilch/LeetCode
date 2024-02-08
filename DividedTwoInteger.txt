@@ -1,0 +1,25 @@
+class Solution {
+    public int divide(int dividend, int divisor) {
+//integer is minimum or not & divisor is  exact equal to -1; if yes then return maximum value 
+        if (dividend == Integer.MIN_VALUE && divisor == -1)
+            return Integer.MAX_VALUE;
+          // declr var & check divident grter than 0 or divisor 0 or 1  
+        int sign = dividend > 0 ^ divisor > 0 ? -1 : 1;
+        int ans=0;
+
+        int dvd=Math.abs(dividend);
+        int dvs=Math.abs(divisor);
+        //traverse if dvdnt is less tha divisor 
+        while(dvd>=dvs)
+        {
+            int k=1;
+            
+            while(k*2*dvs<=dvd)
+            k *=2;
+            dvd -=k*dvs;
+            ans +=k;
+        }
+        return sign *(int)ans;
+
+    }
+}
