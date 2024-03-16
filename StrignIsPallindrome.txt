@@ -1,0 +1,30 @@
+package com.pallindrome;
+
+import java.util.Scanner;
+
+import javax.management.relation.Role;
+
+public class Pallindrome {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		String reverse="";
+		System.out.println("Enter String To Check It is Pallindrome or Not");
+		String original = sc.nextLine();
+		for(int i=original.length()-1;i>=0;i--)
+		{
+			reverse=reverse+original.charAt(i);
+		}
+		if(original.equals(reverse))
+		{
+			System.out.println("Given Strign Is Pallindrome");
+		}
+		else
+			
+		{
+			System.out.println("Given String Is Not Pallindrome");
+		}
+	}
+
+}
