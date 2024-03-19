@@ -1,0 +1,83 @@
+package com.AdditionOfTwoMatrix;
+
+import java.util.Scanner;
+
+public class AdditionOfTwoMatrix {
+
+	public static void main(String[] args) {
+		int numberOfRows, numberOfCol;
+		//Scanner sc = null;
+		Scanner sc=new Scanner(System.in);
+		try 
+		{
+			System.out.println("Enter Number Of Rows");
+			numberOfCol = sc.nextInt();
+			System.out.println("Enter Number Of Colums");
+			numberOfRows = sc.nextInt();
+			int matrix1[][] = new int[numberOfRows][numberOfCol];
+			int matrix2[][] = new int[numberOfRows][numberOfCol];
+			int resultMatrix[][]=new int[numberOfRows][numberOfCol];
+			System.out.println("Enter Element Of First Matrix");
+			for (int i = 0; i < numberOfRows; i++) 
+			{
+				for (int j = 0; j < numberOfCol; j++) 
+			{
+					matrix1[i][j] = sc.nextInt();
+			}
+			}
+				System.out.println("First Matrix Is");
+			for (int i = 0; i < numberOfRows; i++) 
+			{
+			for (int j = 0; j < numberOfCol; j++) 
+			{
+				System.out.print(matrix1[i][j]+" ");
+			}
+				System.out.println();
+			}
+				System.out.println("Enter Element Of Second Matrix");
+			for (int i = 0; i < numberOfRows; i++) 
+			{
+			for (int j = 0; j < numberOfCol; j++) 
+			{
+				matrix2[i][j] = sc.nextInt();
+			}
+			}
+				System.out.println("Second Matrix is");
+			for (int i = 0; i < numberOfRows; i++) 
+			{
+			for (int j = 0; j < numberOfCol; j++) 
+			{
+				System.out.print(matrix2[i][j]+" ");
+			}
+				System.out.println();
+			}
+			for(int i=0;i<numberOfRows;i++)
+			{
+			for(int j=0;j<numberOfCol;j++)
+			{
+				resultMatrix[i][j]=matrix1[i][j]+matrix2[i][j];
+			}
+			}
+				System.out.println("Additon Of Two Matrix is");
+			for (int i = 0; i < numberOfRows; i++) 
+			{
+			for (int j = 0; j < numberOfCol; j++) 
+			{
+				System.out.print(resultMatrix[i][j]+" ");
+			}
+			System.out.println();
+			}
+			}
+			catch (Exception e) 
+			{
+			e.printStackTrace();
+			}
+			finally 
+			{
+			if(sc!=null)
+			{
+				sc.close();
+			}	
+			}
+			}
+			}
